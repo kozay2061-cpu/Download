@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>စာအုပ်များ ဒေါင်းလုဒ်ရယူရန်</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 { color: #333; margin-bottom: 20px; }
+        
+        .search-box {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 15px;
+            margin-bottom: 30px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+        }
+        .search-box:focus { border-color: #007bff; }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s;
+        }
+        .book-card:hover { transform: translateY(-5px); }
+
+        /* အလိုအလျောက် ထွက်လာမည့် စာအုပ်ကာဗာ ဒီဇိုင်း */
+        .auto-cover {
+            height: 240px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298); /* ကာဗာ နောက်ခံ အရောင် */
+            color: white;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: inset -5px 0 10px rgba(0,0,0,0.2); /* စာအုပ်အနားသတ် အရိပ် */
+        }
+
+        /* ကာဗာ အရောင် အမျိုးမျိုး ပြောင်းချင်ပါက သုံးရန် class များ */
+        .cover-red { background: linear-gradient(135deg, #870000, #190a05); }
+        .cover-green { background: linear-gradient(135deg, #134e5e, #71b280); }
+        .cover-purple { background: linear-gradient(135deg, #4568dc, #b06ab3); }
+
+        .auto-cover .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            word-break: break-word;
+        }
+        .auto-cover .author {
+            font-size: 13px;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .book-info {
+            padding: 15px;
+        }
+        .download-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: block;
+        }
+        .download-btn:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <h1>📚 စာအုပ်များ ဒေါင်းလုဒ်ဆွဲရန်</h1>
+    <input type="text" id="searchInput" class="search-box" onkeyup="searchBooks()" placeholder="စာအုပ်အမည် ရှာဖွေရန်...">
+
+    <div class="book-grid" id="bookGrid">
+        
+        <!-- စာအုပ် ၁ (ပြာရောင် ကာဗာ) -->
+        <div class="book-card">
+            <div class="auto-cover">
+                <div class="title">ဗုဒ္ဓဘာသာကောင်းတစ်ယောက်</div>
+                <div class="author">သာသနာရေး</div>
+            </div>
+            <div class="book-info">
+                <a href="https://drive.google.com/uc?export=download&id=1lmKethcfE6Wh_RVi0Tqsx2f1JD3CTAgw" class="download-btn" target="_blank">Download</a>
+            </div>
+        </div>
+
+        <!-- စာအုပ် ၂ (အနီရောင် ကာဗာ) -->
+        <div class="book-card">
+            <div class="auto-cover cover-red">
+                <div class="title">ဘုရား၊ တရား၊ သံဃဂုဏ်တော်၊ ငါးပါးသီလ</div>
+                <div class="author">သာသနာရေး</div>
+            </div>
+            <div class="book-info">
+                <a href="https://drive.google.com/uc?export=download&id=18BV9wjoPGpA2OLKfz99h1ePaVHiPk_sE" class="download-btn" target="_blank">Download</a>
+            </div>
+        </div>
+
+        <!-- စာအုပ် ၃ (အစိမ်းရောင် ကာဗာ) -->
+        <div class="book-card">
+            <div class="auto-cover cover-green">
+                <div class="title">ဆရာတော်ကြီးများ၏ဝိပဿနာရှုနည်း</div>
+                <div class="author">စုစည်းတင်ပြ</div>
+            </div>
+            <div class="book-info">
+                <a href="https://drive.google.com/uc?export=download&id=1lmKethcfE6Wh_RVi0Tqsx2f1JD3CTAgw" class="download-btn" target="_blank">Download</a>
+            </div>
+        </div>
+
+      <!-- စာအုပ် ၁ (ပြာရောင် ကာဗာ) -->
+        <div class="book-card">
+            <div class="auto-cover">
+                <div class="title">ဘဝကူးပြောင်းပုံမှ ဗောဒိပက္ခိယတရားထိ</div>
+                <div class="author">သာသနာရေး</div>
+            </div>
+            <div class="book-info">
+                <a href="https://drive.google.com/uc?export=download&id=1ipLS_QDoFsPrRL0UVwRpef8H_ykRdh-W" class="download-btn" target="_blank">Download</a>
+            </div>
+        </div>
+
+        <!-- စာအုပ် ၂ (အနီရောင် ကာဗာ) -->
+        <div class="book-card">
+            <div class="auto-cover cover-red">
+                <div class="title">ပဉှာဝါရ</div>
+                <div class="author"></div>
+            </div>
+            <div class="book-info">
+                <a href="https://drive.google.com/uc?export=download&id=1yb0gWIhdqtQaOK3Cr2a0-6Ueu3QkqDYK" class="download-btn" target="_blank">Download</a>
+            </div>
+        </div>
+  
+
+    </div>
+
+    <script>
+        function searchBooks() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let bookCards = document.getElementsByClassName('book-card');
+
+            for (let i = 0; i < bookCards.length; i++) {
+                let title = bookCards[i].getElementsByClassName('title')[0].innerText.toLowerCase();
+                if (title.includes(input)) {
+                    bookCards[i].style.display = "flex";
+                } else {
+                    bookCards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
