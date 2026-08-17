@@ -3,43 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>စာအုပ်များ ဒေါင်းလုဒ်ရယူရန်</title>
+    <title>ငါသည်မုချသေရမည် - စာအုပ်များ</title>
     <style>
         * { box-sizing: border-box; }
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: #0f0f13;
+            color: white;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             text-align: center;
         }
-        h1 { color: #333; margin-bottom: 20px; }
-        
-        .search-box {
-            width: 100%;
-            max-width: 400px;
-            padding: 12px 15px;
-            margin-bottom: 30px;
-            border: 2px solid #ddd;
-            border-radius: 25px;
-            font-size: 16px;
-            outline: none;
-        }
-        .search-box:focus { border-color: #007bff; }
 
-        .book-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
+        /* TikTok Profile Header ဒီဇိုင်း */
+        .profile-header {
+            background-color: #1a1a24;
+            padding: 30px 20px;
+            border-bottom: 1px solid #2d2d3a;
+        }
+        
+        /* Link များတွင် စာကြောင်းအောက်မျဉ်း မပေါ်စေရန် */
+        .profile-link {
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+        }
+
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid #fe2c55;
+            object-fit: cover;
+            margin-bottom: 10px;
+            transition: transform 0.2s;
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .profile-username {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 15px;
+        }
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .stat-number {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #888;
+        }
+        .bio-text {
+            font-size: 14px;
+            max-width: 500px;
+            margin: 0 auto;
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        /* Main Content */
+        .main-container {
+            padding: 20px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
+        .search-box {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 18px;
+            margin: 15px 0 30px 0;
+            border: 1px solid #333;
+            border-radius: 25px;
+            font-size: 15px;
+            background-color: #1a1a24;
+            color: white;
+            outline: none;
+        }
+        .search-box:focus { border-color: #fe2c55; }
+
+        /* Book Grid Layout */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+        }
+
         .book-card {
-            background: white;
+            background: #1a1a24;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 1px solid #2a2a38;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -47,60 +119,81 @@
         }
         .book-card:hover { transform: translateY(-5px); }
 
-        /* အလိုအလျောက် ထွက်လာမည့် စာအုပ်ကာဗာ ဒီဇိုင်း */
         .auto-cover {
-            height: 240px;
-            background: linear-gradient(135deg, #1e3c72, #2a5298); /* ကာဗာ နောက်ခံ အရောင် */
+            height: 220px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
-            padding: 20px 15px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
-            box-shadow: inset -5px 0 10px rgba(0,0,0,0.2); /* စာအုပ်အနားသတ် အရိပ် */
         }
 
-        /* ကာဗာ အရောင် အမျိုးမျိုး ပြောင်းချင်ပါက သုံးရန် class များ */
         .cover-red { background: linear-gradient(135deg, #870000, #190a05); }
         .cover-green { background: linear-gradient(135deg, #134e5e, #71b280); }
-        .cover-purple { background: linear-gradient(135deg, #4568dc, #b06ab3); }
 
         .auto-cover .title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            margin-bottom: 10px;
-            word-break: break-word;
-        }
-        .auto-cover .author {
-            font-size: 13px;
-            opacity: 0.8;
-            font-style: italic;
+            margin-bottom: 8px;
         }
 
         .book-info {
-            padding: 15px;
+            padding: 12px;
         }
         .download-btn {
-            background-color: #007bff;
+            background-color: #fe2c55;
             color: white;
-            padding: 8px 12px;
+            padding: 8px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
             display: block;
+            font-size: 14px;
         }
-        .download-btn:hover { background-color: #0056b3; }
+        .download-btn:hover { background-color: #e02648; }
     </style>
 </head>
 <body>
 
-    <h1>📚 စာအုပ်များ ဒေါင်းလုဒ်ဆွဲရန်</h1>
-    <input type="text" id="searchInput" class="search-box" onkeyup="searchBooks()" placeholder="စာအုပ်အမည် ရှာဖွေရန်...">
+    <!-- TikTok Profile Header Section -->
+<div class="profile-header">
+    
+    <a href="https://www.tiktok.com/@merit_111?_r=1&_t=ZS-98xqUWx7tsP" target="_blank" class="profile-link">
+        <!-- ဒီနေရာမှာ Imgbb Direct Link အစားထိုးလိုက်ပါပြီ -->
+        <img src="https://i.ibb.co/8DYP0qTf/Picsart-26-05-23-16-06-30-735.png" alt="Profile Image" class="profile-img">
+        <div class="profile-name">ငါသည်မုချသေရမည်</div>
+        <div class="profile-username">@merit_111</div>
+    </a>
 
-    <div class="book-grid" id="bookGrid">
-        
-        <!-- စာအုပ် ၁ (ပြာရောင် ကာဗာ) -->
+    <div class="stats-container">
+        <div class="stat-item">
+            <span class="stat-number">154</span>
+            <span class="stat-label">Following</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">18.9K</span>
+            <span class="stat-label">Followers</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">177.8K</span>
+            <span class="stat-label">Likes</span>
+        </div>
+    </div>
+
+    <div class="bio-text">
+        တရားကို တစ်လုံး တစ်ပါးလောက် သိသွားတဲ့အခါ မိမိအတွက် အကျိုးများလို့ ဖတ် စေချင်ပါတယ်။
+    </div>
+</div>
+
+    <!-- Main Content Section -->
+    <div class="main-container">
+        <input type="text" id="searchInput" class="search-box" onkeyup="searchBooks()" placeholder="စာအုပ်အမည် ရှာဖွေရန်...">
+
+        <div class="book-grid" id="bookGrid">
+            
+            <!-- စာအုပ် ၁ (ပြာရောင် ကာဗာ) -->
         <div class="book-card">
             <div class="auto-cover">
                 <div class="title">ဗုဒ္ဓဘာသာကောင်းတစ်ယောက်</div>
@@ -154,10 +247,11 @@
                 <a href="https://drive.google.com/uc?export=download&id=1yb0gWIhdqtQaOK3Cr2a0-6Ueu3QkqDYK" class="download-btn" target="_blank">Download</a>
             </div>
         </div>
-  
 
+        </div>
     </div>
 
+    <!-- JavaScript Search -->
     <script>
         function searchBooks() {
             let input = document.getElementById('searchInput').value.toLowerCase();
