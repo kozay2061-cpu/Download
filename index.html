@@ -164,6 +164,39 @@
             font-size: 14px;
         }
         .download-btn:hover { background-color: #e02648; }
+
+      .button-group {
+            display: flex;
+            justify-content: center; /* ခလုတ်များကို အလယ်ဗဟိုသို့ စုပေးမည် */
+            align-items: center;
+            gap: 8px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .preview-btn, .download-btn {
+            flex: 1; /* ၂ ခုရှိပါက နေရာတစ်ဝက်စီ အတိအကျ ညီတူမျှတူ ယူမည် */
+            max-width: 100px; /* ၁ ခုတည်းရှိလျှင်လည်း အရမ်းမကြီးသွားအောင် ၁၀၀px ထိသာ ထားမည် */
+            height: 32px; /* အမြင့်ကို ပုံသေသတ်မှတ်လိုက်သဖြင့် မြန်မာစာကြောင့် ပိုကြီးမနေတော့ပါ */
+            display: flex;
+            align-items: center;
+            justify-content: center; /* စာသားများကို ခလုတ်အလယ်တည့်တည့်သို့ ပို့မည် */
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 12px; /* စာလုံးအရွယ်အစားကို အနည်းငယ် သေးလိုက်ပါသည် */
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+
+        .preview-btn {
+            background-color: #28a745; /* ဖတ်မည် (အစိမ်းရောင်) */
+        }
+
+        .download-btn {
+            background-color: #fe2c55; /* Download (အနီရောင်) */
+        }
     </style>
 </head>
 <body>
@@ -185,11 +218,11 @@
             <span class="stat-label">Following</span>
         </div>
         <div class="stat-item">
-            <span class="stat-number">19K</span>
+            <span class="stat-number">19.1K</span>
             <span class="stat-label">Followers</span>
         </div>
         <div class="stat-item">
-            <span class="stat-number">178.3K</span>
+            <span class="stat-number">179.7K</span>
             <span class="stat-label">Likes</span>
         </div>
     </div>
@@ -199,7 +232,6 @@
     </div>
 </div>
 
-    <!-- Main Content Section -->
     <div class="main-container">
         <input type="text" id="searchInput" class="search-box" onkeyup="searchBooks()" placeholder="စာအုပ်အမည် ရှာဖွေရန်...">
 
@@ -211,7 +243,8 @@
                 <div class="title">ဗုဒ္ဓဘာသာကောင်းတစ်ယောက်</div>
                 <div class="author"></div>
             </div>
-            <div class="book-info">
+            <div class="button-group">
+                <a href="https://drive.google.com/file/d/1bq5jEiB1qYgafADPjChdthkLt8ckHnTV/view?usp=drivesdk" target="_blank" class="preview-btn">ဖတ်မည်</a>
                 <a href="https://drive.google.com/uc?export=download&id=1lmKethcfE6Wh_RVi0Tqsx2f1JD3CTAgw" class="download-btn" target="_blank">Download</a>
             </div>
         </div>
@@ -222,7 +255,8 @@
                 <div class="title">ဘုရား၊ တရား၊ သံဃဂုဏ်တော်၊ ငါးပါးသီလ</div>
                 <div class="author"></div>
             </div>
-            <div class="book-info">
+            <div class="button-group">
+                <a href="https://drive.google.com/file/d/18BV9wjoPGpA2OLKfz99h1ePaVHiPk_sE/view?usp=drivesdk" target="_blank" class="preview-btn">ဖတ်မည်</a>
                 <a href="https://drive.google.com/uc?export=download&id=18BV9wjoPGpA2OLKfz99h1ePaVHiPk_sE" class="download-btn" target="_blank">Download</a>
             </div>
         </div>
@@ -231,9 +265,10 @@
         <div class="book-card">
             <div class="auto-cover cover-green">
                 <div class="title">ဆရာတော်ကြီးများ၏ဝိပဿနာရှုနည်း</div>
-                <div class="author">စုစည်း</div>
+                <div class="author">စုစည်းတင်ပြ</div>
             </div>
-            <div class="book-info">
+            <div class="button-group">     
+                <a href="https://drive.google.com/file/d/1lmKethcfE6Wh_RVi0Tqsx2f1JD3CTAgw/view?usp=drivesdk" target="_blank" class="preview-btn">ဖတ်မည်</a>
                 <a href="https://drive.google.com/uc?export=download&id=1lmKethcfE6Wh_RVi0Tqsx2f1JD3CTAgw" class="download-btn" target="_blank">Download</a>
             </div>
         </div>
@@ -244,7 +279,8 @@
                 <div class="title">ဘဝကူးပြောင်းပုံမှ ဗောဒိပက္ခိယတရားထိ</div>
                 <div class="author"></div>
             </div>
-            <div class="book-info">
+            <div class="button-group">     
+                <a href="https://drive.google.com/file/d/1ipLS_QDoFsPrRL0UVwRpef8H_ykRdh-W/view?usp=drivesdk" target="_blank" class="preview-btn">ဖတ်မည်</a>
                 <a href="https://drive.google.com/uc?export=download&id=1ipLS_QDoFsPrRL0UVwRpef8H_ykRdh-W" class="download-btn" target="_blank">Download</a>
             </div>
         </div>
@@ -255,7 +291,7 @@
                 <div class="title">ပဉှာဝါရ</div>
                 <div class="author"></div>
             </div>
-            <div class="book-info">
+            <div class="button-group">     <a href="https://drive.google.com/file/d/1yb0gWIhdqtQaOK3Cr2a0-6Ueu3QkqDYK/view?usp=drivesdk" target="_blank" class="preview-btn">ဖတ်မည်</a>
                 <a href="https://drive.google.com/uc?export=download&id=1yb0gWIhdqtQaOK3Cr2a0-6Ueu3QkqDYK" class="download-btn" target="_blank">Download</a>
             </div>
         </div>
@@ -265,7 +301,7 @@
                 <div class="title">ပဋ္ဌာန်း နိဿယျ</div>
                 <div class="author"></div>
             </div>
-            <div class="book-info">
+            <div class="button-group">     <a href="https://drive.google.com/file/d/1ohp-je-qxOhRW9ZzZKL40YUYn31aN814/view?usp=drivesdk" target="_blank" class="preview-btn">ဖတ်မည်</a>
                 <a href="https://drive.google.com/uc?export=download&id=1ohp-je-qxOhRW9ZzZKL40YUYn31aN814" class="download-btn" target="_blank">Download</a>
             </div>
         </div>
@@ -278,7 +314,7 @@
                 <div class="author">(For Android)
                   မှ ဓမ္မပဒ</div>
             </div>
-            <div class="book-info">
+            <div class="button-group">     <a href="your-link.pdf" target="_blank" class="preview-btn">ဖတ်မည်</a>
                 <a href="https://drive.google.com/uc?export=download&id=1nsIq-pzc0eYvqR9cNOEN15MVs7yQk80K" class="download-btn" target="_blank">Download</a>
             </div>
         </div>
@@ -289,7 +325,7 @@
                 </div>
                 <div class="author"></div>
             </div>
-            <div class="book-info">
+            <div class="button-group">     <a href="https://drive.google.com/file/d/1CWMjP0GkUbr_vkAHIBVpns0b2Gqc8fdy/view?usp=ZS-98xqUWx7tsP" target="_blank" class="preview-btn">ဖတ်မည်</a>
                 <a href="https://drive.google.com/uc?export=download&id=1CWMjP0GkUbr_vkAHIBVpns0b2Gqc8fdy" class="download-btn" target="_blank">Download</a>
             </div>
         </div>
