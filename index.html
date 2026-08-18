@@ -143,9 +143,11 @@
             word-break: break-word; /* စာသားများ ဘောင်ကျော် မထွက်စေရန် */
         }
 
-        .cover-red { background: linear-gradient(135deg, #870000, #190a05); }
-        .cover-green { background: linear-gradient(135deg, #134e5e, #71b280); }
-
+        /* အဟောင်း .cover-red, .cover-green နေရာမှာ ဒီကုတ်ကို အစားထိုးပါ */
+        .book-card:nth-child(4n+1) .auto-cover { background: linear-gradient(135deg, #1e3c72, #2a5298); } /* အပြာ */
+        .book-card:nth-child(4n+2) .auto-cover { background: linear-gradient(135deg, #870000, #190a05); } /* အနီ */
+        .book-card:nth-child(4n+3) .auto-cover { background: linear-gradient(135deg, #134e5e, #71b280); } /* အစိမ်း */
+        .book-card:nth-child(4n+4) .auto-cover { background: linear-gradient(135deg, #4b1248, #f0c27b); } /* ခရမ်း */
         .auto-cover .title {
             font-size: 14px; /* စာအုပ်အမည် စာလုံးအရွယ်အစား */
             font-weight: bold;
