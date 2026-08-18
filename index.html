@@ -131,23 +131,26 @@
         .book-card:hover { transform: translateY(-5px); }
 
         .auto-cover {
-            height: 220px;
+            min-height: 220px; /* height အသေမထားဘဲ စာရှည်ရင် အလိုအလျောက် လိုက်ရှည်ပေးမည် */
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
-            padding: 15px;
+            padding: 15px 10px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
+            word-break: break-word; /* စာသားများ ဘောင်ကျော် မထွက်စေရန် */
         }
 
         .cover-red { background: linear-gradient(135deg, #870000, #190a05); }
         .cover-green { background: linear-gradient(135deg, #134e5e, #71b280); }
 
         .auto-cover .title {
-            font-size: 16px;
+            font-size: 14px; /* စာအုပ်အမည် စာလုံးအရွယ်အစား */
             font-weight: bold;
-            margin-bottom: 8px;
+            line-height: 1.6; /* စာကြောင်းတစ်ကြောင်းနှင့်တစ်ကြောင်း အကွာအဝေး */
+            margin: 0;
         }
 
         .book-info {
