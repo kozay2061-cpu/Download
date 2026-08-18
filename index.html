@@ -15,18 +15,25 @@
             text-align: center;
         }
 
-        /* TikTok Profile Header ဒီဇိုင်း */
+        /* TikTok Profile Header ဒီဇိုင်း အသစ် */
         .profile-header {
             background-color: #1a1a24;
             padding: 30px 20px;
             border-bottom: 1px solid #2d2d3a;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* အရာအားလုံးကို အလယ်တည့်တည့် ပို့ပေးမည် */
+            justify-content: center;
+            width: 100%;
         }
         
-        /* Link များတွင် စာကြောင်းအောက်မျဉ်း မပေါ်စေရန် */
         .profile-link {
             text-decoration: none;
             color: white;
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Link အတွင်းရှိ ပုံနှင့်စာများကို အလယ်ပို့မည် */
+            text-align: center;
         }
 
         .profile-img {
@@ -35,11 +42,7 @@
             border-radius: 50%;
             border: 3px solid #fe2c55;
             object-fit: cover;
-            margin-bottom: 10px;
-            transition: transform 0.2s;
-        }
-        .profile-img:hover {
-            transform: scale(1.05);
+            margin-bottom: 12px;
         }
 
         .profile-name {
@@ -47,6 +50,7 @@
             font-weight: bold;
             margin-bottom: 5px;
         }
+
         .profile-username {
             font-size: 14px;
             color: #aaa;
@@ -56,25 +60,32 @@
         .stats-container {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 25px;
             margin-bottom: 15px;
+            width: 100%;
         }
+
         .stat-item {
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
+
         .stat-number {
             font-size: 16px;
             font-weight: bold;
         }
+
         .stat-label {
             font-size: 12px;
             color: #888;
         }
+
         .bio-text {
             font-size: 14px;
             max-width: 500px;
-            margin: 0 auto;
+            text-align: center;
             color: #ddd;
             line-height: 1.5;
         }
@@ -123,7 +134,12 @@
             height: 220px;
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
-
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
         .cover-red { background: linear-gradient(135deg, #870000, #190a05); }
         .cover-green { background: linear-gradient(135deg, #134e5e, #71b280); }
@@ -151,8 +167,7 @@
     </style>
 </head>
 <body>
-
-    <!-- TikTok Profile Header Section -->
+                
 <!-- TikTok Profile Header Section -->
     <div class="profile-header">
         
