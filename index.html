@@ -131,8 +131,8 @@
         .book-card:hover { transform: translateY(-5px); }
 
         .auto-cover {
-            min-height: 220px; /* height အသေမထားဘဲ စာရှည်ရင် အလိုအလျောက် လိုက်ရှည်ပေးမည် */
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            min-height: 220px;
+            background: linear-gradient(135deg, #870000, #190a05); /* အနီရောင် Gradient */
             color: white;
             padding: 15px 10px;
             display: flex;
@@ -140,18 +140,13 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            word-break: break-word; /* စာသားများ ဘောင်ကျော် မထွက်စေရန် */
+            word-break: break-word;
         }
 
-        /* အဟောင်း .cover-red, .cover-green နေရာမှာ ဒီကုတ်ကို အစားထိုးပါ */
-        .book-card:nth-child(4n+1) .auto-cover { background: linear-gradient(135deg, #1e3c72, #2a5298); } /* အပြာ */
-        .book-card:nth-child(4n+2) .auto-cover { background: linear-gradient(135deg, #870000, #190a05); } /* အနီ */
-        .book-card:nth-child(4n+3) .auto-cover { background: linear-gradient(135deg, #134e5e, #71b280); } /* အစိမ်း */
-        .book-card:nth-child(4n+4) .auto-cover { background: linear-gradient(135deg, #4b1248, #f0c27b); } /* ခရမ်း */
         .auto-cover .title {
-            font-size: 14px; /* စာအုပ်အမည် စာလုံးအရွယ်အစား */
+            font-size: 15px; /* စာအုပ်အမည် စာလုံးအရွယ်အစား */
             font-weight: bold;
-            line-height: 1.6; /* စာကြောင်းတစ်ကြောင်းနှင့်တစ်ကြောင်း အကွာအဝေး */
+            line-height: 1.8; /* စာကြောင်းတစ်ကြောင်းနှင့်တစ်ကြောင်း အကွာအဝေး */
             margin: 0;
         }
 
@@ -159,7 +154,7 @@
             padding: 12px;
         }
         .download-btn {
-            background-color: #fe2c55;
+            background-color: #1b69e8;
             color: white;
             padding: 8px;
             text-decoration: none;
@@ -214,7 +209,7 @@
         <div class="book-card">
             <div class="auto-cover">
                 <div class="title">ဗုဒ္ဓဘာသာကောင်းတစ်ယောက်</div>
-                <div class="author">သာသနာရေး</div>
+                <div class="author"></div>
             </div>
             <div class="book-info">
                 <a href="https://drive.google.com/uc?export=download&id=1lmKethcfE6Wh_RVi0Tqsx2f1JD3CTAgw" class="download-btn" target="_blank">Download</a>
@@ -225,7 +220,7 @@
         <div class="book-card">
             <div class="auto-cover cover-red">
                 <div class="title">ဘုရား၊ တရား၊ သံဃဂုဏ်တော်၊ ငါးပါးသီလ</div>
-                <div class="author">သာသနာရေး</div>
+                <div class="author"></div>
             </div>
             <div class="book-info">
                 <a href="https://drive.google.com/uc?export=download&id=18BV9wjoPGpA2OLKfz99h1ePaVHiPk_sE" class="download-btn" target="_blank">Download</a>
@@ -236,7 +231,7 @@
         <div class="book-card">
             <div class="auto-cover cover-green">
                 <div class="title">ဆရာတော်ကြီးများ၏ဝိပဿနာရှုနည်း</div>
-                <div class="author">စုစည်းတင်ပြ</div>
+                <div class="author">စုစည်း</div>
             </div>
             <div class="book-info">
                 <a href="https://drive.google.com/uc?export=download&id=1lmKethcfE6Wh_RVi0Tqsx2f1JD3CTAgw" class="download-btn" target="_blank">Download</a>
@@ -247,7 +242,7 @@
         <div class="book-card">
             <div class="auto-cover">
                 <div class="title">ဘဝကူးပြောင်းပုံမှ ဗောဒိပက္ခိယတရားထိ</div>
-                <div class="author">သာသနာရေး</div>
+                <div class="author"></div>
             </div>
             <div class="book-info">
                 <a href="https://drive.google.com/uc?export=download&id=1ipLS_QDoFsPrRL0UVwRpef8H_ykRdh-W" class="download-btn" target="_blank">Download</a>
@@ -280,7 +275,7 @@
             <div class="auto-cover cover-red">
                 <div class="title">တရား‌ကောင်းများ.apk
                 </div>
-                <div class="author">[ For Android ]
+                <div class="author">(For Android)
                   မှ ဓမ္မပဒ</div>
             </div>
             <div class="book-info">
@@ -292,7 +287,7 @@
             <div class="auto-cover cover-red">
                 <div class="title">ဥပုဒ်သည်တို့မှတ်ဖွယ် ပုံဝတ္ထု‌လေးဆယ်
                 </div>
-                <div class="author">ဦးအောင်မွန်(မြတ်ဆုမွန်)</div>
+                <div class="author"></div>
             </div>
             <div class="book-info">
                 <a href="https://drive.google.com/uc?export=download&id=1CWMjP0GkUbr_vkAHIBVpns0b2Gqc8fdy" class="download-btn" target="_blank">Download</a>
