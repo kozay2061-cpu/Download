@@ -667,7 +667,6 @@
         </div>
 
 <script>
-        // ၁။ စာအုပ် ရှာဖွေသည့် စနစ်
         function searchBooks() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let bookCards = document.getElementsByClassName('book-card');
@@ -679,49 +678,6 @@
                 } else {
                     bookCards[i].style.display = "none";
                 }
-            }
-        }
-
-        // ၂။ အကြိမ်အရေအတွက် အလိုအလျောက် ရေတွက်သည့် စနစ်
-        document.addEventListener("DOMContentLoaded", function () {
-            let cards = document.querySelectorAll('.book-card');
-
-            cards.forEach((card, index) => {
-                let bookId = 'book_' + (index + 1);
-
-                let readBtn = card.querySelector('.preview-btn');
-                let downloadBtn = card.querySelector('.download-btn');
-
-                if (readBtn) {
-                    readBtn.addEventListener('click', function () {
-                        trackClick(bookId, 'read');
-                    });
-                }
-                if (downloadBtn) {
-                    downloadBtn.addEventListener('click', function () {
-                        trackClick(bookId, 'download');
-                    });
-                }
-
-                let readCount = localStorage.getItem(bookId + '_read') || 0;
-                let downloadCount = localStorage.getItem(bookId + '_download') || 0;
-
-                let countInfo = document.createElement('p');
-                countInfo.style.cssText = "font-size: 13px; color: #555; margin-top: 8px;";
-                countInfo.innerHTML = `ဖတ်: <span id="readDisplay_${bookId}">${readCount}</span> ကြိမ် | Download: <span id="downloadDisplay_${bookId}">${downloadCount}</span> ကြိမ်`;
-
-                card.appendChild(countInfo);
-            });
-        });
-
-        function trackClick(bookId, type) {
-            let key = bookId + '_' + type;
-            let count = parseInt(localStorage.getItem(key) || 0) + 1;
-            localStorage.setItem(key, count);
-
-            let displayElem = document.getElementById(type + 'Display_' + bookId);
-            if (displayElem) {
-                displayElem.innerText = count;
             }
         }
     </script>
