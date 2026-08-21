@@ -146,7 +146,7 @@
         .auto-cover .title {
             font-size: 15px; /* စာအုပ်အမည် စာလုံးအရွယ်အစား */
             font-weight: bold;
-            line-height: 1.8; /* စာကြောင်းတစ်ကြောင်းနှင့်တစ်ကြောင်း အကွာအဝေး */
+            line-height: 1.5; /* စာကြောင်းတစ်ကြောင်းနှင့်တစ်ကြောင်း အကွာအဝေး */
             margin: 0;
         }
 
@@ -198,16 +198,24 @@
             background-color: #fe2c55; /* Download (အနီရောင်) */
         }
 
-      /* ခေါင်းစဉ်အသစ်အတွက် ဒီဇိုင်း */
-        .section-title {
-            color: #ffffff;
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            margin: 30px 20px 15px 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #fe2c55; /* အောက်ခြေမျဉ်း အနီရောင်လေးပါမည် */
-        }
+      .section-title-line {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #f1c40f; /* ရွှေဝါရောင် */
+    font-size: 22px;
+    font-weight: bold;
+    margin: 45px 15px 35px 15px;
+}
+
+.section-title-line::before,
+.section-title-line::after {
+    content: "";
+    flex: 1;
+    border-bottom: 2px solid #f1c40f; /* မျဉ်းအရောင် */
+    margin: 0 20px;
+    opacity: 0.4; /* မျဉ်းကို နည်းနည်း မှိန်ထားမည် */
+}
     </style>
 </head>
 <body>
@@ -229,11 +237,11 @@
             <span class="stat-label">Following</span>
         </div>
         <div class="stat-item">
-            <span class="stat-number">19.7K</span>
+            <span class="stat-number">20K</span>
             <span class="stat-label">Followers</span>
         </div>
         <div class="stat-item">
-            <span class="stat-number">183.2K</span>
+            <span class="stat-number">184.5K</span>
             <span class="stat-label">Likes</span>
         </div>
     </div>
@@ -243,7 +251,7 @@
     </div>
 </div>
 
-    <div class="main-container">
+    < class="main-container">
     <input type="text" id="searchInput" class="search-box" onkeyup="searchBooks()" placeholder="စာအုပ်အမည် ရှာဖွေရန်...">
 
     <!-- ပထမပိုင်း စာအုပ်များ -->
@@ -405,13 +413,13 @@
             <div class="title">မိုးကုတ်ဝိပဿနာပဏာမအရသာတရားများ</div>
             <div class="button-group">     
                 <a href="https://drive.google.com/file/d/13H24xtB-rSqmo93FSxwMkanrE-g2nxPU/view?usp=drivesdk" class="preview-btn" target="_blank">ဖတ်မည်</a>
-                <a href="https://drive.google.com/uc?export=download&id=13H24xtB-rSqmo93FSxwMkanrE-g2nxPU" class="download-btn" target="_blank">Download</a>
+                <a href="https://drive.google.com/uc?export=download&id=134xtB-rSqmo93FSxwMkanrE-g2nxPU" class="download-btn" target="_blank">Download</a>
             </div>
         </div>
 
         <!-- စာအုပ် ၁၇ -->
         <div class="book-card">
-            <img src="https://lh3.googleusercontent.com/d/11QpOrXSGY2iw74q7h2H95Dz0UrUd3Q8N" alt="မောင်းထောင်မြေဇင်းတောရဆရာတော်ဘုရားကြီး၏ကန္နီနည်းသမထ-ဝိပဿနာ ကျင့်စဉ်ကျမ်း" class="book-image">
+            <img src="https://lh3.googleusercontent.com/d/11QpOrXSGY2iw74q7H95Dz0UrUd3Q8N" alt="မောင်းထောင်မြေဇင်းတောရဆရာတော်ဘုရားကြီး၏ကန္နီနည်းသမထ-ဝိပဿနာ ကျင့်စဉ်ကျမ်း" class="book-image">
             <div class="title">မောင်းထောင်မြေဇင်းတောရဆရာတော်ဘုရားကြီး၏ကန္နီနည်းသမထ-ဝိပဿနာ ကျင့်စဉ်ကျမ်း</div>
             <div class="button-group">     
                 <a href="https://drive.google.com/file/d/1KSiNsqYHvni_Y2kra_QsTCsgyW0gQ_z0/view?usp=drivesdk" class="preview-btn" target="_blank">ဖတ်မည်</a>
@@ -515,12 +523,92 @@
                     <a href="https://drive.google.com/file/d/1d_-2Cfj_ihk9Ci46ppoqED3adIih7MTu/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
                     <a href="https://drive.google.com/uc?export=download&id=1d_-2Cfj_ihk9Ci46ppoqED3adIih7MTu"class="download-btn">Download</a>
                 </div>
+            </div>
+      
+      <div class="book-card">
+                <img src="https://lh3.googleusercontent.com/d/1kyRR5E2-No0iIH0h6XOnnnx0lQv4_LCd" alt="ပဋိစ္စသမုပ္ပါဒ်သင်ပြရှုမှတ်နည််း (ဆရာကိုင်)" class="book-image">
+                    <div class="title">ငရဲဆို ချိုနဲ့လားဗျို့</div>
+                 <div class="button-group">
+                    <a href="https://drive.google.com/file/d/1T_vQJMLL-bWuyox02sSohXSBDCP3NnNL/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1T_vQJMLL-bWuyox02sSohXSBDCP3NnNL"class="download-btn">Download</a>
+                </div>
       </div>
 
+      <div class="book-card">
+                <img src="https://lh3.googleusercontent.com/d/1L4VifMOWJtHjCMf7Hw_DqM712vnG_2gF" alt="ပဋိစ္စသမုပ္ပါဒ်သင်ပြရှုမှတ်နည််း (ဆရာကိုင်)" class="book-image">
+                    <div class="title">ပညာရှိအမတ်ကြီးဦးပေါ်ဦးလျှောက်ထုံး</div>
+                 <div class="button-group">
+                    <a href="https://drive.google.com/file/d/1U8rwHZ8BZ0LYSWxqahqGP3OqsLxZ78ev/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1U8rwHZ8BZ0LYSWxqahqGP3OqsLxZ78ev"class="download-btn">Download</a>
+                </div>
+            </div>
+
+        <div class="book-card">
+                <img src="https://lh3.googleusercontent.com/d/1NCCb5-K_44f5CJgg2uhT6yuo1LcHotNn" alt="ပဋိစ္စသမုပ္ပါဒ်သင်ပြရှုမှတ်နည််း (ဆရာကိုင်)" class="book-image">
+                    <div class="title">သံဃာတော်များနှင့် ပြောဆိုဆက်ဆံနည်း</div>
+                 <div class="button-group">
+                    <a href="https://drive.google.com/file/d/1ZCpQJ4hkULCztfHdPfsIgfT7ix1p5GRr/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1ZCpQJ4hkULCztfHdPfsIgfT7ix1p5GRr"class="download-btn">Download</a>
+                </div>
+        </div>
+
+      <div class="book-card">
+                <img src="https://lh3.googleusercontent.com/d/1eylRCdOcSu7hKF3o98CgNLGsHlJn-AWZ" alt="ပဋိစ္စသမုပ္ပါဒ်သင်ပြရှုမှတ်နည််း (ဆရာကိုင်)" class="book-image">
+                    <div class="title">ပဋိစ္စသမုပ္ပါဒ်မေးနှင့်ဖြေအကျဉ်းချုပ်</div>
+                 <div class="button-group">
+                    <a href="https://drive.google.com/file/d/1KOAhEwmKiyc3o83jjsDkLM3SV1Otyjcl/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1KOAhEwmKiyc3o83jjsDkLM3SV1Otyjcl"class="download-btn">Download</a>
+                </div>
+      </div>
+
+      <div class="book-card">
+                <img src="https://lh3.googleusercontent.com/d/1JPwv6SmrhV9luXJMpPmGAA-OZO5a6Szb" alt="ပဋိစ္စသမုပ္ပါဒ်သင်ပြရှုမှတ်နည််း (ဆရာကိုင်)" class="book-image">
+                    <div class="title">ဗုဒ္ဓကိုယ်တိုင် ဖြေကြားခဲ့ရသော မေးခွန်းနှင့်ပြဿနာမျာ (၅ တွဲပေါင်း)</div>
+                 <div class="button-group">
+                    <a href="https://drive.google.com/file/d/1U8rwHZ8BZ0LYSWxqahqGP3OqsLxZ78ev/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1rfwvWCb0xWd9KvxHVWDZlwaWvOFXmXjs"class="download-btn">Download</a>
+                </div>
+          </div>
+
+        <div class="book-card">
+                <img src="https://lh3.googleusercontent.com/d/13SwXmv6mkO70Pdt0LyOFdDxywEFY3XFe" alt="ပဋိစ္စသမုပ္ပါဒ်သင်ပြရှုမှတ်နည််း (ဆရာကိုင်)" class="book-image">
+                    <div class="title">သင်္ဂဇာစကာပုံပေါင်းချုပ်  (သင်္ဂဇာဆရာတော်ဘုရားကြီး)</div>
+                 <div class="button-group">
+                    <a href="https://drive.google.com/file/d/1MNTZInsB-rj7-xIDL0tdiD_zw2f1_9E7/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1MNTZInsB-rj7-xIDL0tdiD_zw2f1_9E7"class="download-btn">Download</a>
+                </div>
+          </div>
+
+        <div class="book-card">
+                <img src="https://lh3.googleusercontent.com/d/1mYv_XwcHVCTCF8yWF8b37L1OA4cBsSXF" alt="ပဋိစ္စသမုပ္ပါဒ်သင်ပြရှုမှတ်နည််း (ဆရာကိုင်)" class="book-image">
+                    <div class="title">ပုံတော်စုံ ဓမ္မပဒဝတ္ထုတော်ကြီး (ပ-ဒု တွဲ) 257MB </div>
+                 <div class="button-group">
+                    <a href="https://drive.google.com/file/d/1_bIWkKXp5MEcm4Hpt99lgtCrzYKsyzNW/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1_bIWkKXp5MEcm4Hpt99lgtCrzYKsyzNW"class="download-btn">Download</a>
+                </div>
+          </div>
+
+      <div class="book-card">
+                <img src="https://lh3.googleusercontent.com/d/1-DuI0gZA-moEAmPMkOoFb0j16Nxyi0V6" alt="ပဋိစ္စသမုပ္ပါဒ်သင်ပြရှုမှတ်နည််း (ဆရာကိုင်)" class="book-image">
+                    <div class="title">ပဋ္ဌာန်းနိဿယျ (ညောင်ကန်အေး)</div>
+                 <div class="button-group">
+                    <a href="https://drive.google.com/file/d/1lyhk4jByiVEu82IThQJXSCv2YHk4zG-_/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1lyhk4jByiVEu82IThQJXSCv2YHk4zG-_"class="download-btn">Download</a>
+                </div>
+      </div>
+
+      <div class="book-card">
+                <img src="https://lh3.googleusercontent.com/d/13ErVTI3CzAeRICjlp43bQk1qnNs4PSy9" alt="ပဋိစ္စသမုပ္ပါဒ်သင်ပြရှုမှတ်နည််း (ဆရာကိုင်)" class="book-image">
+                    <div class="title">ဗုဒ္ဓ၏အဘိဓမ္မာဝတ္ထုတော်ကြီး(ရှေးဆရာ)</div>
+                 <div class="button-group">
+                    <a href="https://drive.google.com/file/d/1crpozeyuOo-yteBrUXu-fG9q08kzR4FW/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1crpozeyuOo-yteBrUXu-fG9q08kzR4FW"class="download-btn">Download</a>
+                </div>
+      </div>
     </div>
 
     <!-- ဒုတိယပိုင်း (ဆရာတော်၊ သံဃာတော်များအတွက်) -->
-    <h2 class="section-title">ဆရာတော် သံဃာတော် များအတွက်</h2>
+    <h2 class="section-title-line">ဆရာတော် သံဃာတော် များအတွက်</h2>
 
     <!-- ဒုတိယပိုင်း စာအုပ်များအတွက် Grid -->
     <div class="book-grid">
@@ -649,7 +737,7 @@
                     <div class="title">ပိဋကတ်တော်လာ သိမှတ်စရာ </div>
                  <div class="button-group">
                     <a href="https://drive.google.com/file/d/16LTZ-VJQZ7GPpzlUAbxryE-My6VuBgLR/view?usp=drivesdk" target="_blank" class="preview-btn">ဖတ်မည်</a>
-                    <a href="https://drive.google.com/uc?export=download&id=16LTZ-VJQZ7GPpzlUAbxryE-My6VuBgLRqsXlass="class="download-btn">Download</a>
+                    <a href="https://drive.google.com/uc?export=download&id=16LTZ-VJQZ7GPpzlUAbxryE-My6VuBgLR"class="download-btn">Download</a>
                 </div>
         </div>
       
@@ -661,12 +749,39 @@
                     <a href="https://drive.google.com/file/d/1d_-2Cfj_ihk9Ci46ppoqED3adIih7MTu/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
                     <a href="https://drive.google.com/uc?export=download&id=1d_-2Cfj_ihk9Ci46ppoqED3adIih7MTu"class="download-btn">Download</a>
                 </div>
-          </div
+      </div>
+
+            <div class="book-card">
+                <img src="https://lh3.googleusercontent.com/d/1bIgrvzXPXpI4-F4sYsrALoT1rEg5SKWr" alt="ပဋိစ္စသမုပ္ပါဒ်သင်ပြရှုမှတ်နည််း (ဆရာကိုင်)" class="book-image">
+                    <div class="title">ကံကြီးကံငယ်ဆိုင်ရာ ကမ္မာကမ္မဘာသာ </div>
+                 <div class="button-group">
+                    <a href="https://drive.google.com/file/d/1dVFrHYMqvjFh8eIjwhuPiGbrWSsmmaPI/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1dVFrHYMqvjFh8eIjwhuPiGbrWSsmmaPI"class="download-btn">Download</a>
+                </div>
+            </div>
+
+          <div class="book-card">
+                <img src="https://lh3.googleusercontent.com/d/1hCyZMeD8V1lbDCQiVbT0Lv5iWHwoJDn1" alt="ပဋိစ္စသမုပ္ပါဒ်သင်ပြရှုမှတ်နည််း (ဆရာကိုင်)" class="book-image">
+                    <div class="title">ပဋိကတ်တော်နှင့်စပ် မှတ်စုထွေလာ သိကောင်းစရာ</div>
+                 <div class="button-group">
+                    <a href="https://drive.google.com/file/d/1XzZtNoTWJq6bB_806KX2ho3iwK_kBBYi/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1XzZtNoTWJq6bB_806KX2ho3iwK_kBBYi"class="download-btn">Download</a>
+                </div>
+          </div>
+
+      <div class="book-card">
+                <img src="https://lh3.googleusercontent.com/d/1QMFyO-TJTXH8NPAY6wGI97a8HN9H8QdA" alt="ပဋိစ္စသမုပ္ပါဒ်သင်ပြရှုမှတ်နည််း (ဆရာကိုင်)" class="book-image">
+                    <div class="title">ဗုဒ္ဓဒေသနာတော်အညွှန်း</div>
+                 <div class="button-group">
+                    <a href="https://drive.google.com/file/d/1QpJSyX-9PuC_qr2mLC9mPqq2n9lpjdA2/view?usp=drivesdk"target="_blank" class="preview-btn">ဖတ်မည်</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1QpJSyX-9PuC_qr2mLC9mPqq2n9lpjdA2"class="download-btn">Download</a>
+                </div>
+          </div>
       
     </div>
- </div>
 
-      <h2 class="section-title">Apk ဒေါင်းရန်</h2>
+
+      <h2 class="section-title-line">Apk ဒေါင်းရန်</h2>
 
         <!-- ဒုတိယပိုင်း စာအုပ်များအတွက် Grid အသစ် -->
         <div class="book-grid">
